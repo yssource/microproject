@@ -1,0 +1,262 @@
+
+Showing logs for build [32mcirclelightindream-microproject-1[0m stage [32mmeta-pipeline[0m and container [32mstep-credential-initializer-xxr2q[0m
+{"level":"warn","ts":1568863466.2904599,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1568863466.2909331,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcirclelightindream-microproject-1[0m stage [32mmeta-pipeline[0m and container [32mstep-working-dir-initializer-n4k6b[0m
+{"level":"warn","ts":1568863466.9130476,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1568863466.9146907,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+
+Showing logs for build [32mcirclelightindream-microproject-1[0m stage [32mmeta-pipeline[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcirclelightindream-microproject-1[0m stage [32mmeta-pipeline[0m and container [32mstep-git-source-meta-circlelightindream-micropr-jnxgb[0m
+{"level":"warn","ts":1568863472.9550743,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1568863476.2006414,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/******************/microproject.git @ 6a48b3eecd0c213d35e4c8549499d5028f40334d in path /workspace/source"}
+
+Showing logs for build [32mcirclelightindream-microproject-1[0m stage [32mmeta-pipeline[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:6a48b3eecd0c213d35e4c8549499d5028f40334d
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mcirclelightindream-microproject-1[0m stage [32mmeta-pipeline[0m and container [32mstep-merge-pull-refs[0m
+SKIP merge-pull-refs: Nothing to merge
+
+Showing logs for build [32mcirclelightindream-microproject-1[0m stage [32mmeta-pipeline[0m and container [32mstep-create-effective-pipeline[0m
+Deleting and cloning the Jenkins X versions repo
+Cloning the Jenkins X versions repo https://github.com/jenkins-x/jenkins-x-versions.git with ref refs/heads/master to /builder/home/.**/jenkins-x-versions
+Effective pipeline written to jenkins-x-effective.yml
+
+Showing logs for build [32mcirclelightindream-microproject-1[0m stage [32mmeta-pipeline[0m and container [32mstep-create-tekton-crds[0m
+running command: echo \$(**-release-version) > VERSION
+
+running command: mvn versions:set -DnewVersion=\$(cat VERSION)
+Picked up _JAVA_OPTIONS: -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms10m -Xmx192m
+OpenJDK 64-Bit Server VM warning: If the number of processors is expected to increase from one, then you should configure the number of parallel GC threads appropriately using -XX:ParallelGCThreads=N
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< com.treasuremountain:demo >----------------------
+[INFO] Building demo 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- versions-maven-plugin:2.7:set (default-cli) @ demo ---
+[INFO] Searching for local aggregator root...
+[INFO] Local aggregation root: /workspace/source
+[INFO] Processing change of com.treasuremountain:demo:0.0.1-SNAPSHOT -> 0.0.1
+[INFO] Processing com.treasuremountain:demo
+[INFO]     Updating project com.treasuremountain:demo
+[INFO]         from version 0.0.1-SNAPSHOT to 0.0.1
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  03:29 min
+[INFO] Finished at: 2019-09-19T03:28:24Z
+[INFO] ------------------------------------------------------------------------
+
+running command: ** step tag --version \$(cat VERSION)
+Updating chart version in charts/microproject/Chart.yaml to 0.0.1
+Updating repository in charts/microproject/values.yaml to registry.cn-zhangjiakou.aliyuncs.com/******************/microproject
+Updating tag in charts/microproject/values.yaml to 0.0.1
+Tag v0.0.1 created and pushed to remote origin
+
+WARNING: failed to find secret kaniko-secret in namespace **: secrets "kaniko-secret" not found
+PipelineActivity for ******************-microproject-master-1
+Applying changes 
+upserted PipelineResource ******************-microproject for the git repository https://github.com/******************/microproject.git
+upserted Task ******************-microproject-from-build-pack-1
+upserted Pipeline ******************-microproject-1
+created PipelineRun ******************-microproject-1
+created PipelineStructure ******************-microproject-1
+
+Showing logs for build [32mcirclelightindream-microproject-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-dp69c[0m
+{"level":"warn","ts":1568863710.5664124,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1568863710.5669081,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcirclelightindream-microproject-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-4472v[0m
+{"level":"warn","ts":1568863711.5248256,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1568863711.5260615,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source /workspace/source/charts/microproject\""}
+
+Showing logs for build [32mcirclelightindream-microproject-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcirclelightindream-microproject-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-circlelightindream-microproject-4dwph[0m
+{"level":"warn","ts":1568863717.5665817,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1568863720.9191096,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/******************/microproject.git @ v0.0.1 in path /workspace/source"}
+
+Showing logs for build [32mcirclelightindream-microproject-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:6a48b3eecd0c213d35e4c8549499d5028f40334d
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mcirclelightindream-microproject-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mcirclelightindream-microproject-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-mvn-deploy[0m
+Picked up _JAVA_OPTIONS: -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms10m -Xmx192m
+OpenJDK 64-Bit Server VM warning: If the number of processors is expected to increase from one, then you should configure the number of parallel GC threads appropriately using -XX:ParallelGCThreads=N
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< com.treasuremountain:demo >----------------------
+[INFO] Building demo 0.0.1
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ demo ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ demo ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ demo ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to /workspace/source/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ demo ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:testCompile (default-testCompile) @ demo ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /workspace/source/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M1:test (default-test) @ demo ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.treasuremountain.demo.DemoApplicationTests
+03:30:57.207 [main] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class com.treasuremountain.demo.DemoApplicationTests]
+03:30:57.217 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+03:30:57.227 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+03:30:57.257 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.treasuremountain.demo.DemoApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+03:30:57.271 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.treasuremountain.demo.DemoApplicationTests], using SpringBootContextLoader
+03:30:57.275 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.treasuremountain.demo.DemoApplicationTests]: class path resource [com/treasuremountain/demo/DemoApplicationTests-context.xml] does not exist
+03:30:57.275 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.treasuremountain.demo.DemoApplicationTests]: class path resource [com/treasuremountain/demo/DemoApplicationTestsContext.groovy] does not exist
+03:30:57.275 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.treasuremountain.demo.DemoApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+03:30:57.276 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.treasuremountain.demo.DemoApplicationTests]: DemoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+03:30:57.327 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.treasuremountain.demo.DemoApplicationTests]
+03:30:57.421 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/workspace/source/target/classes/com/treasuremountain/demo/DemoApplication.class]
+03:30:57.422 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.treasuremountain.demo.DemoApplication for test class com.treasuremountain.demo.DemoApplicationTests
+03:30:57.525 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.treasuremountain.demo.DemoApplicationTests]: using defaults.
+03:30:57.526 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+03:30:57.546 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7714e963, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@20ce78ec, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@393671df, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@56620197, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6eda5c9, org.springframework.test.context.transaction.TransactionalTestExecutionListener@55b7a4e0, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@5f058f00, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@192d43ce, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@72057ecf, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@1afd44cb, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6973b51b, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@1ab3a8c8]
+03:30:57.547 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.treasuremountain.demo.DemoApplicationTests]
+03:30:57.548 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.treasuremountain.demo.DemoApplicationTests]
+03:30:57.550 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.treasuremountain.demo.DemoApplicationTests]
+03:30:57.550 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.treasuremountain.demo.DemoApplicationTests]
+03:30:57.551 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.treasuremountain.demo.DemoApplicationTests]
+03:30:57.551 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.treasuremountain.demo.DemoApplicationTests]
+03:30:57.555 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@47af7f3d testClass = DemoApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7c729a55 testClass = DemoApplicationTests, locations = '{}', classes = '{class com.treasuremountain.demo.DemoApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@4b1c1ea0, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@3712b94, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@7a765367, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@42f93a98], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+03:30:57.556 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.treasuremountain.demo.DemoApplicationTests]
+03:30:57.556 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.treasuremountain.demo.DemoApplicationTests]
+03:30:57.578 [main] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.3.RELEASE)
+
+2019-09-19 03:30:57.933  INFO 67 --- [           main] c.t.demo.DemoApplicationTests            : Starting DemoApplicationTests on ******************-microproject-1-from-build-pack-27fbz-pod-161 with PID 67 (started by root in /workspace/source)
+2019-09-19 03:30:57.935  INFO 67 --- [           main] c.t.demo.DemoApplicationTests            : No active profile set, falling back to default profiles: default
+2019-09-19 03:30:59.689  INFO 67 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$17db815f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-19 03:31:01.047  INFO 67 --- [           main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-09-19 03:31:01.901  INFO 67 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-19 03:31:02.473  INFO 67 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-09-19 03:31:02.504  INFO 67 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-09-19 03:31:02.533  INFO 67 --- [           main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-09-19 03:31:02.729  INFO 67 --- [           main] c.t.demo.DemoApplicationTests            : Started DemoApplicationTests in 5.144 seconds (JVM running for 5.921)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.826 s - in com.treasuremountain.demo.DemoApplicationTests
+2019-09-19 03:31:02.934  INFO 67 --- [       Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- maven-jar-plugin:3.1.1:jar (default-jar) @ demo ---
+[INFO] Building jar: /workspace/source/target/demo-0.0.1.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.1.3.RELEASE:repackage (repackage) @ demo ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ demo ---
+[INFO] Installing /workspace/source/target/demo-0.0.1.jar to /root/.mvnrepository/com/treasuremountain/demo/0.0.1/demo-0.0.1.jar
+[INFO] Installing /workspace/source/pom.xml to /root/.mvnrepository/com/treasuremountain/demo/0.0.1/demo-0.0.1.pom
+[INFO] 
+[INFO] --- maven-deploy-plugin:2.8.2:deploy (default-deploy) @ demo ---
+[INFO] Using alternate deployment repository nexus::default::http://nexus/repository/maven-releases/
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  03:22 min
+[INFO] Finished at: 2019-09-19T03:32:05Z
+[INFO] ------------------------------------------------------------------------
+
+Showing logs for build [32mcirclelightindream-microproject-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-skaffold-version[0m
+v0.37.0
+
+Showing logs for build [32mcirclelightindream-microproject-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] Downloading base image openjdk:11-jre-slim   
+2019/09/19 03:32:06 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0004] Error while retrieving image from cache: getting file info: stat /workspace/sha256:31e765618b9d37e3e73aab362f5b867729007d87f473d26a1aa0a789a1cfea21: no such file or directory 
+[36mINFO[0m[0004] Downloading base image openjdk:11-jre-slim   
+2019/09/19 03:32:11 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0007] cmd: EXPOSE                                  
+[36mINFO[0m[0007] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0007] Using files from context: [/workspace/source/pom.xml] 
+[36mINFO[0m[0007] Using files from context: [/workspace/source/target/demo-0.0.1.jar] 
+[36mINFO[0m[0007] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0007] Taking snapshot of full filesystem...        
+[36mINFO[0m[0008] ENV PORT 8080                                
+[36mINFO[0m[0008] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0008] ENV CLASSPATH /opt/lib                       
+[36mINFO[0m[0008] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0008] EXPOSE 8080                                  
+[36mINFO[0m[0008] cmd: EXPOSE                                  
+[36mINFO[0m[0008] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0008] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0008] Using files from context: [/workspace/source/pom.xml] 
+[36mINFO[0m[0008] COPY pom.xml target/lib* /opt/lib/           
+[36mINFO[0m[0008] Taking snapshot of files...                  
+[36mINFO[0m[0008] Using files from context: [/workspace/source/target/demo-0.0.1.jar] 
+[36mINFO[0m[0008] COPY target/*.jar /opt/app.jar               
+[36mINFO[0m[0008] Taking snapshot of files...                  
+[36mINFO[0m[0008] WORKDIR /opt                                 
+[36mINFO[0m[0008] cmd: workdir                                 
+[36mINFO[0m[0008] Changed working directory to /opt            
+[36mINFO[0m[0008] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0008] CMD ["java", "-jar", "app.jar"]              
+[36mINFO[0m[0008] No files changed in this command, skipping snapshotting. 
+2019/09/19 03:32:16 existing blob: sha256:b8f262c62ec67f02536f49654de586c022043652bbb6bbf76a8dab1542627a8d
+2019/09/19 03:32:16 existing blob: sha256:bde67c1ff89fda30053d5c20d0e07ba1de298df013c938e0966f5944fe7bdd08
+2019/09/19 03:32:16 existing blob: sha256:377e264464ddccb9550cff64ba470dfdb784acdb2ff265ae333b9215fc873b08
+2019/09/19 03:32:16 pushed blob: sha256:7ecff103a5ea827712433da0b02d447870e1071da7926e497e89412ffa62b930
+2019/09/19 03:32:16 pushed blob: sha256:4605baf862fb776f709a1c5e5c18b74fc91b35d9ca4769fe65207af1d7f31df4
+2019/09/19 03:33:41 pushed blob: sha256:38b30e3f148bc48424d43635bb3a700204c5ac65d886f23e68f18342ffe87456
+2019/09/19 03:34:03 pushed blob: sha256:6ba84ddbf1b2c00387b66d1c920253fe715f40070d2a1498b48bafbb65b0e0d6
+2019/09/19 03:34:03 registry.cn-zhangjiakou.aliyuncs.com/******************/microproject:0.0.1: digest: sha256:94f29fee120353f5ea97192c5ec99c949c9d245f729cb074462bc6cea3a0f6f0 size: 1243
+
+Showing logs for build [32mcirclelightindream-microproject-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mcirclelightindream-microproject-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/microproject to an unshallow repository
+no previous commit version found so change diff unavailable
+
+Showing logs for build [32mcirclelightindream-microproject-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file microproject-0.0.1.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mcirclelightindream-microproject-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+Promoting app microproject version 0.0.1 to namespace **-staging
+Created Pull Request: https://github.com/******************/environment-voicebasalt-staging/pull/1
+Pull Request https://github.com/******************/environment-voicebasalt-staging/pull/1 is merged at sha 82560160d90e151685bacf92a8cedf096cef68c7
+Pull Request merged but we are not waiting for the update pipeline to complete!
+WARNING: Could not find the service URL in namespace **-staging for names microproject, **-microproject, **-staging-microproject
