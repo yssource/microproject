@@ -1,0 +1,12 @@
+
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:mysql://172.26.184.221:3306/auto-test?useUnicode=true&characterEncoding=utf8&autoReconnect=true&serverTimezone=UTC&useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
